@@ -1,22 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Boundary : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    void OnTriggerExit(Collider other)
+public class Boundary : MonoBehaviour 
+{
+    private void OnTriggerExit(Collider other)
     {
-        // Destroy everything that leaves the trigger
-        Destroy(other.gameObject);
-        print("left");
+        if(other.tag == "Player")
+        {
+            //Display Warning, Begin Timed Destruction
+            Debug.Log("Player Exited");
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            //Cancel any Timed Destruction, Remove Warning if Any
+            Debug.Log("Player Re-entered");
+        }
     }
 }
