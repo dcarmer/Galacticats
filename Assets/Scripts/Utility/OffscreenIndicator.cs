@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,11 +26,12 @@ public class OffscreenIndicator : MonoBehaviour
             OffScreenAlertIcon.name = OffScreenAlertIconImage_PREFAB.name + "("+name+")";
             OffScreenAlertIcon.gameObject.hideFlags = HideFlags.NotEditable;
         }
-        if(!EditorApplication.isPlaying)
+#if UNITY_EDITOR
+        if (!EditorApplication.isPlaying)
         {
             EditorApplication.playmodeStateChanged += SwitchingStates;
         }
-
+#endif
         Camera.onPreCull += IndicateOffscreen;
     }
     private void OnDisable()
@@ -36,21 +39,26 @@ public class OffscreenIndicator : MonoBehaviour
         Camera.onPreCull -= IndicateOffscreen;
         if(OffScreenAlertIcon != null)
         {
+#if UNITY_EDITOR
             if (!EditorApplication.isPlaying)
             {
                 DestroyImmediate(OffScreenAlertIcon.gameObject);
             }
             else
+#endif
             {
                 Destroy(OffScreenAlertIcon.gameObject);
             }
         }
+#if UNITY_EDITOR
         if (!EditorApplication.isPlaying)
         {
             EditorApplication.playmodeStateChanged -= SwitchingStates;
         }
+#endif
 
     }
+#if UNITY_EDITOR
     private void SwitchingStates() //Don't think I should need, but wont work without
     {
         if(EditorApplication.isPlayingOrWillChangePlaymode && !EditorApplication.isPlaying) //About to switch to playmode
@@ -58,6 +66,7 @@ public class OffscreenIndicator : MonoBehaviour
             OnDisable();
         }
     }
+#endif
     private void IndicateOffscreen(Camera cam)
     {
         if (cam.name == "SceneCamera" || cam.name == "PreRenderCamera") { return; }

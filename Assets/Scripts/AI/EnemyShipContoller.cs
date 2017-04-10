@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.AnimatedValues; //For AnimBool
+#endif
 
 /*
  * Check thru move and in danger code
@@ -35,6 +37,7 @@ public class EnemyShipContoller : EnemyAIAgent
     private Vector3 dodgeDir; //Dodge direction
 
     /*-----------------------------------Editor Support Start-----------------------------------*/
+#if UNITY_EDITOR
     protected override void OnValidate()
     {
         base.OnValidate();
@@ -48,6 +51,7 @@ public class EnemyShipContoller : EnemyAIAgent
         MaxLngThrust = Mathf.Max(0, MaxLngThrust);
         MaxRotThrust = Mathf.Max(0, MaxRotThrust);
     }
+#endif
     /*------------------------------------Editor Support End------------------------------------*/
     protected void Start() 
     {
@@ -180,6 +184,7 @@ public class EnemyShipContoller : EnemyAIAgent
         return null;
     }
 }
+#if UNITY_EDITOR
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Custom Editor Below @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -326,3 +331,4 @@ public class EnemyShipContollerEditor : Editor
         }
     }
 }
+#endif

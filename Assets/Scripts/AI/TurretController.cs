@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.AnimatedValues; //For AnimBool
+#endif
 
 
 /*
@@ -14,6 +16,7 @@ public class TurretController : EnemyAIAgent
     [Tooltip("The Pivoting Mechanism Object")][SerializeField]private Transform BARBETTE;
     [Tooltip("Max Rotation from Zenith (Deg)")][Range(0,180)][SerializeField]private float MAX_THETA = 90;
     /*-----------------------------------Editor Support Start-----------------------------------*/
+#if UNITY_EDITOR
     protected override void OnValidate()
     {
         base.OnValidate();
@@ -70,6 +73,7 @@ public class TurretController : EnemyAIAgent
             BARBETTE.hasChanged = false;
         }
     }
+#endif
     /*------------------------------------Editor Support End------------------------------------*/
     protected override bool LeadTarget(Rigidbody rb)
     {
@@ -93,7 +97,7 @@ public class TurretController : EnemyAIAgent
     }
 }
 
-
+#if UNITY_EDITOR
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Custom Editor Below @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -225,3 +229,4 @@ public class TurretControllerEditor : Editor
         }
     }
 }
+#endif
