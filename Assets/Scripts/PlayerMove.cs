@@ -27,12 +27,12 @@ public class PlayerMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetAxis("Horizontal" ) < 0 || Input.GetKeyDown("a"))
+        if (Input.GetAxis("Horizontal") < 0)
         {
             rb.AddRelativeForce(Vector3.left * speed);
             //transform.Rotate(Vector3.down * Time.deltaTime * rotSpeed, Space.Self);
         }
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetKeyDown("d"))
+        if (Input.GetAxis("Horizontal") > 0)
         {
             rb.AddRelativeForce(Vector3.right * speed);
             //transform.Rotate(Vector3.up * Time.deltaTime * rotSpeed, Space.Self);
@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour {
         {
             rb.AddRelativeForce(Vector3.back * tSpeed);
         }
-        if (Input.GetAxis("Vertical") > 0 || Input.GetKeyDown("shift"))
+        if (Input.GetAxis("Vertical") > 0)
         {
             rb.AddRelativeForce(Vector3.forward * tSpeed);
         }
@@ -82,7 +82,7 @@ public class PlayerMove : MonoBehaviour {
         Vector3 spawn2 = transform.position + world2;
 
 
-        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown("space"))
+        if (Input.GetButtonDown("Fire1"))
         {
             // rb.AddTorque(Vector3(0,speed,0));
 
