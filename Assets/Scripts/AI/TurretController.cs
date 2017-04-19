@@ -204,7 +204,6 @@ public class TurretControllerEditor : Editor
                 EditorGUI.indentLevel--;
             }
         }
-
         serializedObject.ApplyModifiedProperties();
     }
     protected class EnumPropertyField
