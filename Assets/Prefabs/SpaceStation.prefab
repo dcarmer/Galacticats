@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4542353961742646}
   m_Layer: 0
   m_Name: SpaceStation
-  m_TagString: Untagged
+  m_TagString: Station
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2929,7 +2929,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238560872125248}
-  m_LocalRotation: {x: -0.380934, y: -0.7774754, z: -0.44937992, w: -0.22017956}
+  m_LocalRotation: {x: -0.23385844, y: -0.76937467, z: -0.56875813, w: -0.17287898}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
@@ -2948,7 +2948,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1778695591319212}
-  m_LocalRotation: {x: 0.284254, y: -0.8177887, z: -0.47268108, w: 0.16429833}
+  m_LocalRotation: {x: 0.3820059, y: -0.7076006, z: -0.5230916, w: 0.28239697}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
@@ -2967,7 +2967,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963149616986296}
-  m_LocalRotation: {x: 0.78780854, y: -0.35907713, z: -0.20754635, w: 0.4553524}
+  m_LocalRotation: {x: 0.7756044, y: -0.21228503, z: -0.15693092, w: 0.5733634}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
@@ -3041,7 +3041,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821313985943300}
-  m_LocalRotation: {x: 0.8512932, y: 0.15772974, z: 0.09116745, w: 0.4920466}
+  m_LocalRotation: {x: 0.7570996, y: 0.27097476, z: 0.20031752, w: 0.5596837}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
