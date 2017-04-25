@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114341612045513340}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,8 +438,8 @@ MonoBehaviour:
   HPLeft: 3
   DISABLE_TIME: 5
   Disabled: 1
-  MAX_THETA: 78.1
   BARBETTE: {fileID: 4451123358308032}
+  MAX_THETA: 78.1
 --- !u!114 &114234448330019900
 MonoBehaviour:
   m_ObjectHideFlags: 1

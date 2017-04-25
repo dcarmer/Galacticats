@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
+
+    public static bool dead = false;
     private Rigidbody rb;
     public float speed = 50;
     public float tSpeed = 60;
@@ -13,12 +15,15 @@ public class PlayerMove : MonoBehaviour {
     private Vector3 offset = new Vector3(0.5f, 1.4f, 5f);
     private Vector3 offset2 = new Vector3(-0.5f, 1.4f, 5f);
     public bool shoot = true;
+    public int health = 5;
 
     public GameObject explosion;
 
+    public GameObject deathCam;
+
     // Use this for initialization
     void Start () {
-
+        dead = false;
         rb = GetComponent<Rigidbody>();
         rotSpeed = 80;
 
@@ -26,6 +31,21 @@ public class PlayerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //health
+        if (health <= 0)
+        {
+            //game over
+
+            //spawn camera
+            //Instantiate(deathCam, transform.position, transform.rotation);
+            dead = true;
+            GetComponent<Rigidbody>().Sleep();
+
+
+            //Destroy(gameObject);
+
+        }
 
         if (Input.GetAxis("Horizontal") < 0)
         {
@@ -127,4 +147,9 @@ public class PlayerMove : MonoBehaviour {
         shoot = true;
 
     }
-}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        health = health - 1;
+    }
+    }
