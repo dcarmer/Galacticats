@@ -11,6 +11,9 @@ public class SpaceStation : MonoBehaviour
     [SerializeField]private int HPCap;
     [SerializeField][Range(2,8)]private int HPLeft;
 
+    public AudioClip[] audioClip;
+    AudioSource audio;
+
     private void Start()
     {
         HPLeft = HPCap;
@@ -32,6 +35,7 @@ public class SpaceStation : MonoBehaviour
     {
         if(other.tag == ProjectileTag)
         {
+            GetComponent<AudioSource>().PlayOneShot(audioClip[0], 0.5f);
             HPLeft--;
             UpdateSheild();
             if(HPLeft <= 0)//Explode

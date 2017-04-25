@@ -8,6 +8,7 @@ public class DialougeController : MonoBehaviour {
 
     public bool flag= true;
     public GameObject fancyFeast;
+    public Text fancyFeastText;
     public GameObject hairBall;
     public Text hairBallText;
     public GameObject death;
@@ -23,6 +24,8 @@ public class DialougeController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+       
+        
         int i = Application.loadedLevel;
         stations = GameObject.FindGameObjectsWithTag("Station");
         numOfStations = stations.Length;
@@ -48,7 +51,7 @@ public class DialougeController : MonoBehaviour {
             {
             if (flag)
             {
-
+               
                 hairBall.SetActive(true);
                 hairBallText.text = "Lt. Hair Ball: There are " + numOfStations + " space stations left!";
                 if (numOfStations == 0)
@@ -61,6 +64,7 @@ public class DialougeController : MonoBehaviour {
                 }
                 
                 numOfStationsOld = numOfStations;
+                //
             }
             }
 
@@ -69,7 +73,7 @@ public class DialougeController : MonoBehaviour {
             if (flag)
             {
                 death.SetActive(true);
-                deathText.text = "Cpt. Wonder Puss: NOOOOO..... that was our last chance.. Your SCORE is " + GameWideScore.score + " points.";
+                deathText.text = "Pvt. Wonder Puss: NOOOOO..... that was our last chance.. Your SCORE is " + GameWideScore.score + " points.";
                 StartCoroutine(GameOver(death));
                 player.GetComponent<PlayerMove>().enabled = false;
             }
@@ -80,20 +84,19 @@ public class DialougeController : MonoBehaviour {
 	
 
     private IEnumerator Disapear(GameObject cat)
-    {
-        yield return new WaitForSeconds(5.0f);
-
+    {       
+        yield return new WaitForSeconds(5.0f);        
         cat.SetActive(false);
         flag = true;
         //throw new NotImplementedException();
     }
     private IEnumerator GameOver(GameObject cat)
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(8.0f);
 
         cat.SetActive(false);
         flag = true;
-        Application.LoadLevel("Level1");
+        Application.LoadLevel("Main Menu");
         //throw new NotImplementedException();
     }
     private IEnumerator LastStation(GameObject cat)
@@ -118,7 +121,19 @@ public class DialougeController : MonoBehaviour {
         Time.timeScale = 1;
         fancyFeast.SetActive(true);
         flag = false;
-        StartCoroutine(Disapear(fancyFeast));
+        if (Application.loadedLevel == 0) //level 1...
+        {
+            fancyFeastText.text = "Fancy Feast: Destroy the space station by shooting the shields!";
+        }
+        else if (Application.loadedLevel == 1)
+        {
+            fancyFeastText.text = "Fancy Feast: Use the blue waypoints to find the stations!";
+        }
+        else if (Application.loadedLevel == 2)
+        {
+            fancyFeastText.text = "Fancy Feast: Oh no!! ENEMY SHIPS are guarding the STATIONS!";
+        }
+            StartCoroutine(Disapear(fancyFeast));
         //int i = Application.loadedLevel;
         //Application.LoadLevel(i + 1);
         //throw new NotImplementedException();

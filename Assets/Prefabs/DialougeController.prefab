@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flag: 1
   fancyFeast: {fileID: 0}
+  fancyFeastText: {fileID: 0}
   hairBall: {fileID: 0}
   hairBallText: {fileID: 0}
   death: {fileID: 0}

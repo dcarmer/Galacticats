@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour {
 
     public static bool dead = false;
@@ -21,6 +21,11 @@ public class PlayerMove : MonoBehaviour {
 
     public GameObject deathCam;
 
+    public GameObject healthGui;
+    public Text heatlhText;
+
+    public AudioClip[] audioClip;
+    AudioSource audio;
     // Use this for initialization
     void Start () {
         dead = false;
@@ -32,6 +37,7 @@ public class PlayerMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        heatlhText.text = "Health: " + health;
         //health
         if (health <= 0)
         {
@@ -40,6 +46,8 @@ public class PlayerMove : MonoBehaviour {
             //spawn camera
             //Instantiate(deathCam, transform.position, transform.rotation);
             dead = true;
+            GetComponent<Renderer>().enabled = false;
+
             GetComponent<Rigidbody>().Sleep();
 
 
@@ -120,6 +128,7 @@ public class PlayerMove : MonoBehaviour {
         {
             if (shoot)
             {
+                GetComponent<AudioSource>().PlayOneShot(audioClip[0], 0.5f);
                 shot = Instantiate(laser, spawn, Quaternion.Euler(0, 0, 90));
                 shot2 = Instantiate(laser, spawn2, Quaternion.Euler(0, 0, 90));
 
@@ -150,6 +159,16 @@ public class PlayerMove : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        GetComponent<AudioSource>().PlayOneShot(audioClip[1], 1.0f);
         health = health - 1;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Projectiles")
+        {
+            GetComponent<AudioSource>().PlayOneShot(audioClip[1], 1.0f);
+            health = health - 1;
+        }
     }
+}

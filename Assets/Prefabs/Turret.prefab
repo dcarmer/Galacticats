@@ -431,7 +431,7 @@ MonoBehaviour:
   FIRE_DELAY: 1
   MAX_RANGE: 200
   ROT_SPEED: 90
-  FireSound: {fileID: 8300000, guid: 2060f6d9dc3510b419c4e0d8d8413a22, type: 3}
+  FireSound: {fileID: 8300000, guid: 7593ca3d8960f954382b545f41636a7e, type: 3}
   SoundSource: {fileID: 82214095196389552}
   HealthBar: {fileID: 114711129136921446}
   HPCap: 3
