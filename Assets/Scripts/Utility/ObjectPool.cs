@@ -10,7 +10,9 @@ public static class ObjectPool
         if(!Pool.ContainsKey(prefab))
         {
             Pool.Add(prefab, new List<GameObject>(1));
-            Parents[prefab] = new GameObject(prefab.name + " Pool").transform;
+            GameObject go = new GameObject(prefab.name + " Pool");
+            Object.DontDestroyOnLoad(go);
+            Parents[prefab] = go.transform;
         }
         GameObject inActive = Pool[prefab].Find((x) => !x.activeInHierarchy);
         if (inActive == null)
@@ -26,7 +28,9 @@ public static class ObjectPool
         if (!Pool.ContainsKey(prefab.gameObject))
         {
             Pool.Add(prefab.gameObject, new List<GameObject>(1));
-            Parents[prefab.gameObject] = new GameObject(prefab.name + " Pool").transform;
+            GameObject go = new GameObject(prefab.name + " Pool");
+            Object.DontDestroyOnLoad(go);
+            Parents[prefab.gameObject] = go.transform;
         }
         GameObject inActive = Pool[prefab.gameObject].Find((x) => !x.activeInHierarchy);
         if (inActive == null)

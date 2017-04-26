@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 4899901158876528}
   - component: {fileID: 33495772215298686}
   - component: {fileID: 23252430873900988}
-  - component: {fileID: 64006154958500816}
   - component: {fileID: 114369541400493628}
   m_Layer: 0
   m_Name: OuterRing
@@ -130,7 +129,7 @@ GameObject:
   - component: {fileID: 82994789643791220}
   - component: {fileID: 114087729512778548}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: Turret (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,7 +424,7 @@ GameObject:
   - component: {fileID: 82476386363919660}
   - component: {fileID: 114085552487753732}
   m_Layer: 0
-  m_Name: Turret (2)
+  m_Name: Turret (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +457,6 @@ GameObject:
   - component: {fileID: 4699357146633568}
   - component: {fileID: 33793132869795320}
   - component: {fileID: 23454585567173142}
-  - component: {fileID: 64713629279623414}
   - component: {fileID: 114371700806407164}
   m_Layer: 0
   m_Name: InnerRing
@@ -480,7 +478,7 @@ GameObject:
   - component: {fileID: 82958768357001696}
   - component: {fileID: 114812825489090758}
   m_Layer: 0
-  m_Name: Turret (1)
+  m_Name: Turret (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,8 +511,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4159455841106788}
   - component: {fileID: 33517242353962044}
-  - component: {fileID: 135981134726467446}
   - component: {fileID: 23262480598348710}
+  - component: {fileID: 135981134726467446}
   m_Layer: 0
   m_Name: CoreSheild
   m_TagString: Untagged
@@ -1685,34 +1683,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995034423654620}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64006154958500816
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1182740940029152}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 0e72b426f5d739e4a80edc52cd4a77fc, type: 3}
---- !u!64 &64713629279623414
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1732592680359930}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: d2b0ca5ea3c984141810bd6c12ea7893, type: 3}
 --- !u!82 &82025118072599596
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1733,7 +1703,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 200
+  MaxDistance: 220
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -1813,7 +1783,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 200
+  MaxDistance: 220
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -1973,7 +1943,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 200
+  MaxDistance: 220
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -2053,7 +2023,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 200
+  MaxDistance: 220
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -2149,7 +2119,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 54437180491571504, guid: f1fa71ffb191d154ab36d40f1b0aa660,
     type: 2}
   PROJ_SPAWN: {fileID: 4875126676863380}
-  PROJECTILE_SPEED: 30
+  PROJECTILE_SPEED: 50
   FIRE_DELAY: 1
   MAX_RANGE: 200
   ROT_SPEED: 90
@@ -2187,7 +2157,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 54437180491571504, guid: f1fa71ffb191d154ab36d40f1b0aa660,
     type: 2}
   PROJ_SPAWN: {fileID: 4793434250030000}
-  PROJECTILE_SPEED: 30
+  PROJECTILE_SPEED: 50
   FIRE_DELAY: 1
   MAX_RANGE: 200
   ROT_SPEED: 90
@@ -2412,7 +2382,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 54437180491571504, guid: f1fa71ffb191d154ab36d40f1b0aa660,
     type: 2}
   PROJ_SPAWN: {fileID: 4579061912596178}
-  PROJECTILE_SPEED: 30
+  PROJECTILE_SPEED: 50
   FIRE_DELAY: 1
   MAX_RANGE: 200
   ROT_SPEED: 90
@@ -2493,7 +2463,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 54437180491571504, guid: f1fa71ffb191d154ab36d40f1b0aa660,
     type: 2}
   PROJ_SPAWN: {fileID: 4403143389309682}
-  PROJECTILE_SPEED: 30
+  PROJECTILE_SPEED: 50
   FIRE_DELAY: 1
   MAX_RANGE: 200
   ROT_SPEED: 90
@@ -3012,7 +2982,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238560872125248}
-  m_LocalRotation: {x: -0.1968612, y: -0.7472883, z: -0.61373156, w: -0.16167712}
+  m_LocalRotation: {x: 0.81848764, y: -0.02963873, z: -0.020762768, w: 0.5733832}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
@@ -3031,7 +3001,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1778695591319212}
-  m_LocalRotation: {x: 0.39235246, y: -0.665773, z: -0.54678434, w: 0.32223102}
+  m_LocalRotation: {x: 0.5970807, y: 0.56062037, z: 0.39273712, w: 0.41827857}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
@@ -3050,7 +3020,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963149616986296}
-  m_LocalRotation: {x: 0.7524936, y: -0.17591898, z: -0.14447771, w: 0.6180066}
+  m_LocalRotation: {x: 0.0067736497, y: 0.8189962, z: 0.5737394, w: 0.004744887}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
@@ -3124,7 +3094,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821313985943300}
-  m_LocalRotation: {x: 0.71730965, y: 0.28750825, z: 0.23612484, w: 0.58911026}
+  m_LocalRotation: {x: -0.46420825, y: 0.67476755, z: 0.4727013, w: -0.32519668}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.03, z: 1}
   m_Children:
