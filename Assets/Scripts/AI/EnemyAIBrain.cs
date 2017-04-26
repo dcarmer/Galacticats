@@ -13,7 +13,7 @@ public class EnemyAIBrain : MonoBehaviour
 {
     public static EnemyAIBrain SELF = null;
 
-    public string PROJECTILE_TAG = "Untagged";
+    public string PROJECTILE_TAG = "Projectiles";
     [Tooltip("Resistance to Switching Targets")][SerializeField] private float TARGET_AFFINITY = .3f;
     [Tooltip("AI Targetable Objects")]          [SerializeField] private List<Rigidbody> Targets;
 

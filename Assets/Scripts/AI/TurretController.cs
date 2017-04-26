@@ -77,7 +77,7 @@ public class TurretController : EnemyAIAgent
     /*------------------------------------Editor Support End------------------------------------*/
     protected override bool LeadTarget(Rigidbody rb)
     {
-        float T = TargetLeadTime(rb);
+        float T = 0;// TargetLeadTime(rb);
         if (T <= MAX_TIME) //Is in Range
         {
             Vector3 ProjectedPosition = rb.velocity * T + rb.position - transform.position;
