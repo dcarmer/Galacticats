@@ -32,7 +32,7 @@ public class DialougeController : MonoBehaviour {
         numOfStationsOld = numOfStations;
 
         levelSplash.SetActive(true);
-        levelText.text = "LEVEL " + (i + 1);
+        levelText.text = "LEVEL " + (i);
         StartCoroutine(LevelSplash(levelSplash));
 
 
@@ -105,8 +105,17 @@ public class DialougeController : MonoBehaviour {
 
         cat.SetActive(false);
         flag = true;
+        
         int i = Application.loadedLevel;
-        Application.LoadLevel(i + 1);
+        if (i == 8)
+        {
+            Application.LoadLevel(0);
+        }
+        else
+        {
+            Application.LoadLevel(i + 1);
+        }
+        
         //throw new NotImplementedException();
     }
 
@@ -121,19 +130,23 @@ public class DialougeController : MonoBehaviour {
         Time.timeScale = 1;
         fancyFeast.SetActive(true);
         flag = false;
-        if (Application.loadedLevel == 0) //level 1...
+        if (Application.loadedLevel == 1) //level 1...
         {
             fancyFeastText.text = "Fancy Feast: Destroy the space station by shooting the shields!";
         }
-        else if (Application.loadedLevel == 1)
+        else if (Application.loadedLevel == 2)
         {
             fancyFeastText.text = "Fancy Feast: Use the blue waypoints to find the stations!";
         }
-        else if (Application.loadedLevel == 2)
+        else if (Application.loadedLevel == 3)
         {
             fancyFeastText.text = "Fancy Feast: Oh no!! ENEMY SHIPS are guarding the STATIONS!";
         }
-            StartCoroutine(Disapear(fancyFeast));
+        else if (Application.loadedLevel == 7)
+        {
+            fancyFeastText.text = "Fancy Feast: They have BIGGER space stations!!!";
+        }
+        StartCoroutine(Disapear(fancyFeast));
         //int i = Application.loadedLevel;
         //Application.LoadLevel(i + 1);
         //throw new NotImplementedException();
