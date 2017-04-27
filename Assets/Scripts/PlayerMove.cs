@@ -12,8 +12,8 @@ public class PlayerMove : MonoBehaviour {
     public GameObject laser;
     public GameObject shot;
     public GameObject shot2;
-    private Vector3 offset = new Vector3(0.5f, 1.4f, 5f);
-    private Vector3 offset2 = new Vector3(-0.5f, 1.4f, 5f);
+    private Vector3 offset = new Vector3(0.5f, 0, 5f);
+    private Vector3 offset2 = new Vector3(-0.5f, 0, 5f);
     public bool shoot = true;
     public int health = 5;
 
@@ -46,7 +46,8 @@ public class PlayerMove : MonoBehaviour {
             //spawn camera
             //Instantiate(deathCam, transform.position, transform.rotation);
             dead = true;
-            GetComponent<Renderer>().enabled = false;
+            GetComponentInChildren<Renderer>().enabled = false;
+            //GetComponent<Renderer>().enabled = false;
 
             GetComponent<Rigidbody>().Sleep();
 
